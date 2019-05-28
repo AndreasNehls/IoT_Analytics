@@ -9,7 +9,7 @@
 
 In the following I will use the machine learning technique to investigate the problem of indoor positioning (with the WAP signal) by using this Data Set: [UJIIndoorLoc Data Set ](http://archive.ics.uci.edu/ml/datasets/UJIIndoorLoc)
 
-<h3 align=left>### Data Attribute Information:</h3>
+<h4 align=left>Data Attribute Information:</h4>
 
 - **Attribute 001 - 520 (WAP001 - WAP520):** Intensity value for WAP001 - WAP520. Negative integer values from -104 to 0 and +100. Positive value 100 used if WAP001 - WAP520 was not detected.
 - **Attribute 521 (Longitude):** Longitude. Negative real values from -7695.9387549299299000 to -7299.786516730871000
@@ -23,7 +23,7 @@ In the following I will use the machine learning technique to investigate the pr
 - **Attribute 529 (Timestamp):** UNIX Time when the capture was taken. Integer value.
 
 
-<h3 align=left>Data Set Information:</h3>
+<h4 align=left>Data Set Information:</h4>
 
 Many real world applications need to know the localization of a user in the world to provide their services. Therefore, automatic user localization has been a hot research topic in the last years. Automatic user localization consists of estimating the position of the user (latitude, longitude and altitude) by using an electronic device, usually a mobile phone. Outdoor localization problem can be solved very accurately thanks to the inclusion of GPS sensors into the mobile devices. However, indoor localization is still an open problem mainly due to the loss of GPS signal in indoor environments. Although, there are some indoor positioning technologies and methodologies, this database is focused on WLAN fingerprint-based ones (also know as WiFi Fingerprinting).
 
