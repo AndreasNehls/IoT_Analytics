@@ -16,3 +16,9 @@ In the following I will use the machine learning technique to investigate the pr
 <center> <h1>2014, The year of <span style="color:red">Red</span></h1> </center>
 
 # 2014, The year of [Blue](#)
+
+
+```diff
++ this will be highlighted in green
+- this will be highlighted in red
+```
