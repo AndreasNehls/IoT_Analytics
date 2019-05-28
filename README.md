@@ -10,6 +10,8 @@
 
 In the following I will use the machine learning technique to investigate the problem of indoor positioning (with the WAP signal) by using this Data Set: [UJIIndoorLoc Data Set ](http://archive.ics.uci.edu/ml/datasets/UJIIndoorLoc)
 
+-> # this is some center-aligned text <-
+
 <h4 align=left>Data Attribute Information:</h4>
 
 - **Attribute 001 - 520 (WAP001 - WAP520):** Intensity value for WAP001 - WAP520. Negative integer values from -104 to 0 and +100. Positive value 100 used if WAP001 - WAP520 was not detected.
