@@ -4,7 +4,7 @@
 
 
 <h1 align=center>IoT - Analytics</h1>
-<h2 align=center>Deep Analytics, Visualitzation and Modelling<br></h2>
+<h2 align=center>Deep Analytics, Visualitzation and Modelling<br> </h2>
 
 ### Task 3: Evaluate Techniques for Wifi Locationing
 
