@@ -7,9 +7,9 @@
 <h2 align=center>Deep Analytics, Visualitzation and Modelling</h2>
 </p><br></p>
 
-### Task 3: Evaluate Techniques for Wifi Locationing
+### Task 2: Visualize and Analyze Energy Data
 
-In the following we use the machine learning technique to investigate the problem of indoor positioning (with the WAP signal) by using this Data Set: [UJIIndoorLoc Data Set ](http://archive.ics.uci.edu/ml/datasets/UJIIndoorLoc)
+Smart energy usage: Modeling patterns of energy usage by time of day and day of the year in a typical residence whose electrical system is monitored by multiple sub-meters by using this Data Set: [UJIIndoorLoc Data Set ](http://archive.ics.uci.edu/ml/datasets/UJIIndoorLoc)
 </p><br></p>
 
 ### Data Attribute Information:
