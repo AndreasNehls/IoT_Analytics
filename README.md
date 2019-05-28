@@ -12,3 +12,7 @@ In the following I will use the machine learning technique to investigate the pr
 
 
 <span style="color:red">text in red</span>
+
+<center> <h1>2014, The year of <span style="color:red">Red</span></h1> </center>
+
+# 2014, The year of [Blue](#)
