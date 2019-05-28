@@ -3,6 +3,7 @@
 </p>
 
 <h1 align=center>IoT - Analytics</h1>
+
 <h2 align=center>Deep Analytics, Visualitzation and Modelling</h2>
 
 <h3 align=left><font color = #277a9a>Task 3: <font color = black>Evaluate Techniques for Wifi Locationing</h3>
