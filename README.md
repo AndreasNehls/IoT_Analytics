@@ -5,6 +5,7 @@
 <h1 align=center>IoT - Analytics</h1></p>
 <h2 align=center>Deep Analytics, Visualitzation and Modelling</h2></p>
 <h3 align=left Task 3: Evaluate Techniques for Wifi Locationing</h3></p>
+</p>
 In the following I will use the machine learning technique to investigate the problem of indoor positioning (with the WAP signal) by using this Data Set: [UJIIndoorLoc Data Set ](http://archive.ics.uci.edu/ml/datasets/UJIIndoorLoc)
 
 <h4 align=left>Data Attribute Information:</h4>
