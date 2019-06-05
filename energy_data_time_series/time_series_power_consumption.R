@@ -250,14 +250,12 @@ df$minute <- minute(df$DateTime)
 plot(df$Sub_metering_1)
 
 
-### Subsetting and Meaningful Time Periods
 ### Subset the second week of 2008 - All Observations
 houseWeek <- filter(df, year == 2008 & week == 2)
 ### Plot subset houseWeek
 plot(houseWeek$Sub_metering_1)
 
 
-### Visualize a Single Day with Plotly
 ### Subset the 9th day of January 2008 - All observations
 houseDay <- filter(df, year == 2008 & month == 1 & day == 9)
 ### Plot sub-meter 1
@@ -286,6 +284,7 @@ plot_ly(houseDay10, x = ~houseDay10$DateTime, y = ~houseDay10$Sub_metering_1, na
          xaxis = list(title = "Time"),
          yaxis = list (title = "Power (watt-hours)"))
 
+
 ### Subset the 2007 - 2010 - All observations
 houseYear <- filter(df, year > 2005)
 
@@ -304,13 +303,8 @@ plot_ly(houseYear, x = ~houseYear$DateTime, y = ~houseYear$Sub_metering_3, name 
          xaxis = list(title = "Time"),
          yaxis = list (title = "kwh"))
 
-#### 1. Visualize the data  - Produce Two More Visualizations ####
-#### Now that you understand the workflow, it’s your turn to create two additional visualizations to
-#### compliment one that features "Day". All three visualizations along with your analysis will be
-#### needed for your report to the homebuilder. 
-####
-#### Visualizations needed for your report
-#### The Day day visualization you built in the walkthrough above
+
+#### 1. Visualize the data ####
 ### Subset the 9th day of January 2008 - 10 Minute frequency
 houseDay10 <- filter(df, year == 2008 & month == 1 & day == 9 & (minute == 0 | minute == 10 | minute == 20 | minute == 30 | minute == 40 | minute == 50))
 ### Plot sub-meter 1, 2 and 3 with title, legend and labels - 10 Minute frequency
@@ -320,9 +314,8 @@ plot_ly(houseDay10, x = ~houseDay10$DateTime, y = ~houseDay10$Sub_metering_1, na
   layout(title = "Power Consumption January 9th, 2008 - 10 Minute frequency",
          xaxis = list(title = "Time"),
          yaxis = list (title = "Power (watt-hours)"))
-####
-#### Create a visualization with plotly for a Week of your choosing. Use all three sub-meters and
-#### make sure to label. Experiment with granularity
+
+
 ### Subset the 2nd Calendar Week of 2008 - 30 Minute frequency
 houseWeekMinute <- filter(df, year == 2008 & week == 2 & (minute == 0 | minute == 30))
 ### Plot sub-meter 1, 2 and 3 with title, legend and labels - 10 Minute frequency
@@ -332,11 +325,8 @@ plot_ly(houseWeekMinute, x = ~houseWeekMinute$DateTime, y = ~houseWeekMinute$Sub
   layout(title = "Power Consumption 2nd Calendar Week of 2008 - 30 Minute frequency",
          xaxis = list(title = "Time"),
          yaxis = list (title = "Power (watt-hours)"))
-###
-#### Create a visualization for a time period of your choice. Both "Day" and "Week" highlight typical
-#### patterns in a home. What might be another period of time that could provide insights? Use plotly
-#### and experiment with granularity until you find the visualization that maximizes information gain
-#### for the viewer.
+
+
 ### Subset the January of 2008 - 1 Hour frequency
 houseMonthHour <- filter(df, year == 2008 & month == 1 & (hour == 1 | hour == 2 | hour == 3 | hour == 4 | hour == 5 | hour == 6 | hour == 7 | hour == 8 | hour == 9 | hour == 10 | hour == 11 | hour == 12 | hour == 13 | hour == 14 | hour == 15 | hour == 16 | hour == 17 | hour == 18 | hour == 19 | hour == 20 | hour == 21 | hour == 22 | hour == 23 | hour == 0))
 ### Plot sub-meter 1, 2 and 3 with title, legend and labels - 10 Minute frequency
@@ -367,8 +357,8 @@ plot_ly(houseDay10, x = ~houseDay10$DateTime, y = ~houseDay10$Sub_metering_1, na
   layout(title = "Power Consumption January 9th, 2008 - 10 Minute frequency",
          xaxis = list(title = "Time"),
          yaxis = list (title = "Power (watt-hours) - Temperatur °C"))
-###
-###
+
+
 ### Subset the August of 2008 - 1 Hour frequency
 houseMonthHour <- filter(df, year == 2008 & month == 8 & (hour == 1 | hour == 2 | hour == 3 | hour == 4 | hour == 5 | hour == 6 | hour == 7 | hour == 8 | hour == 9 | hour == 10 | hour == 11 | hour == 12 | hour == 13 | hour == 14 | hour == 15 | hour == 16 | hour == 17 | hour == 18 | hour == 19 | hour == 20 | hour == 21 | hour == 22 | hour == 23 | hour == 0))
 ### Plot sub-meter 1, 2 and 3 with title, legend and labels - 10 Minute frequency
@@ -399,9 +389,9 @@ plot_ly(houseDay10, x = ~houseDay10$DateTime, y = ~houseDay10$Sub_metering_1, na
   layout(title = "Power Consumption - August 9th, 2008 - 10 Minute frequency",
          xaxis = list(title = "Time"),
          yaxis = list (title = "Power (watt-hours) - Temperatur °C"))
-####
-#### Optional Work 
-#### Produce pie chart visualizations that are likely to provide insight, e.g.,
+
+
+#### Pie chart visualizations
 houseYear <- filter(df, year == 2007)
 SB1year <- (sum(houseYear$Sub_metering_1))
 SB2year <- (sum(houseYear$Sub_metering_2))
@@ -413,48 +403,37 @@ SBlabel <- c("Kitchen", "Laundry Room", "Water Heater & AC")
 plot_ly(df, labels = SBlabel, values = SBcategory, type = 'pie', sort = FALSE) %>%
   layout(title = 'Percentage of total power usage')
 
-#### Percentage of total use at various times of day by each sub-meter.
-#### Percentage of total power use over a day by each sub-meter.
-#### Percentage of total power use over an entire year by each sub-meter.
-#### Produce any other visualizations that you believe may provide insight.
 
 #### 2. Prepare to analyze the data ####
 
-### Store your data frame(s) as time series
 ### Subset to one observation per week on Mondays at 8:00pm (20:00) for 2007, 2008 and 2009
 house070809weekly <- filter(df, weekDay == 'Monday' & hour == 20 & minute == 1)
 ### Create TS object with SubMeter3
 tsSM3_070809weekly <- ts(house070809weekly$Sub_metering_3, frequency=52, start=c(2007,1))
 
-### Produce time series plots
 ### Plot sub-meter 3 with autoplot (you may need to install these packages)
 autoplot(tsSM3_070809weekly)
 ### Plot sub-meter 3 with autoplot - add labels, color
 autoplot(tsSM3_070809weekly, colour = 'red', xlab = "Time", ylab = "Watt Hours", main = "Sub-meter 3")
- ### Plot sub-meter 3 with plot.ts
+### Plot sub-meter 3 with plot.ts
 plot.ts(tsSM3_070809weekly)
 
-#### 2. Prepare to analyze the data  - Produce Two More Visualizations ####
-#### Produce Two More Visualizations
-#### It’s your turn to create two additional ts objects and plot them to compliment sub-meter 3 from
-#### above. All three visualizations along with your analysis will be needed for your report to the
-#### homebuilder.
-#### 
-#### Visualizations needed for your report
+
 #### The sub-meter 3 plot you built in the walkthrough above
 ### Store your data frame(s) as time series
 house070809weekly <- filter(df, weekDay == 'Monday' & hour == 20 & minute == 1)
 tsSM3_070809weekly <- ts(house070809weekly$Sub_metering_3, frequency=52, start=c(2007,1))
 autoplot(tsSM3_070809weekly, colour = 'green', xlab = "Time", ylab = "Power (watt-hours)", main = "Power Consumption - Water Heater & AC - per week on Mondays at 8:00pm for 2007, 2008 and 2009")
-####
+
+
 #### Sub-meter 1 with your choice of frequency and time period
 tsSM1_070809weekly <- ts(house070809weekly$Sub_metering_1, frequency=52, start=c(2007,1))
 autoplot(tsSM1_070809weekly, colour = 'blue', xlab = "Time", ylab = "Power (watt-hours)", main = "Power Consumption - Kitchen - per week on Mondays at 8:00pm for 2007, 2008 and 2009")
-####
+
+
 #### Sub-meter 2 with your choice of frequency and time period
 tsSM2_070809weekly <- ts(house070809weekly$Sub_metering_2, frequency=52, start=c(2007,1))
 autoplot(tsSM2_070809weekly, colour = 'orange', xlab = "Time", ylab = "Power (watt-hours)", main = "Power Consumption - Laundry Room - per week on Mondays at 8:00pm for 2007, 2008 and 2009")
-####
 
 
 #### 3. Forecasting a time series ####
@@ -471,12 +450,8 @@ forecastfitSM3c <- forecast(fitSM3, h=52, level=c(80,90))
 ### Plot sub-meter 3 forecast, limit y and add labels
 plot(forecastfitSM3c, ylim = c(0, 20), ylab= "Power (watt-hours)", xlab="Time")
 
-#### 3. Forecasting a time series  - Produce Two More Forecast ####
-#### It’s your turn to create two additional forecasts and plot them to compliment sub-meter 3 from
-#### above. All three visualizations along with your analysis will be needed for your report to the
-#### homebuilder.
-#### 
-#### Visualizations and analysis needed for your report:
+#### 3. Forecasting a time series ####
+
 #### A sub-meter 3 plot you built in the walkthrough above
 ### Apply time series linear regression to the sub-meter 3
 fitSM3 <- tslm(tsSM3_070809weekly ~ trend + season) 
@@ -486,7 +461,8 @@ plot(forecastfitSM3)
 forecastfitSM3c <- forecast(fitSM3, h=52, level=c(80,90))
 ### Plot sub-meter 3 forecast, limit y and add labels
 plot(forecastfitSM3c, ylim = c(-2, 30), ylab= "Power (watt-hours)", xlab="Time", main="Forecast from Linear regression model (1 year) - Water Heater & AC")
-####
+
+
 #### Sub-meter 1 with your choice of frequency, time period and confidence levels
 fitSM1 <- tslm(tsSM1_070809weekly ~ trend + season) 
 summary(fitSM1)
@@ -501,17 +477,15 @@ forecastfitSM2 <- forecast(fitSM2, h=52)
 plot(forecastfitSM2)
 forecastfitSM2c <- forecast(fitSM2, h=52, level=c(80,90))
 plot(forecastfitSM2c, ylim = c(-2, 30), ylab= "Power (watt-hours)", xlab="Time", main="Forecast from Linear regression model (1 year) - Laundry Room")
-####
+
+
 #### One comparison chart showing the R2 and RMSE of each model you built
 accuracy(fitSM1)
 accuracy(fitSM2)
 accuracy(fitSM3)
 
 
-
-
 #### 4. Decomposing a Seasonal Time Series ####
-#### Decomposition
 ### Decompose Sub-meter 3 into trend, seasonal and remainder
 components070809SM3weekly <- decompose(tsSM3_070809weekly)
 ### Plot decomposed sub-meter 3 
@@ -520,33 +494,28 @@ plot(components070809SM3weekly)
 summary(components070809SM3weekly)
 
 #### 4. Decomposing a Seasonal Time Series  - Produce Two More Visualizations ####
-#### It’s your turn to create two additional decomposed ts objects and plot them to compliment
-#### sub-meter 3 from above. All three visualizations along with your analysis will be needed
-#### for your report to the homebuilder.
-#### 
-#### Visualizations and analysis needed for your report:
-#### The sub-meter 3 decomposed plot you built in the walkthrough above
+
 ### Decompose Sub-meter 3 into trend, seasonal and remainder
 components070809SM3weekly <- decompose(tsSM3_070809weekly)
 plot(components070809SM3weekly)
 summary(components070809SM3weekly)
+
 #### Sub-meter 1 decomposed plot with your choice of frequency and time period
 components070809SM1weekly <- decompose(tsSM1_070809weekly)
 plot(components070809SM1weekly)
 summary(components070809SM1weekly)
+
 #### Sub-meter 2 decomposed plot with your choice of frequency and time
 components070809SM2weekly <- decompose(tsSM2_070809weekly)
 plot(components070809SM2weekly)
 summary(components070809SM2weekly)
-#### One comparison chart showing the summary statistics for the seasonal, trend and remainder
-#### components from each decomposed object
 
 
 #### 5. Holt-Winters Forecasting ####
-#### Remove Seasonal Components
 ### Seasonal adjusting sub-meter 3 by subtracting the seasonal component & plot
 tsSM3_070809Adjusted <- tsSM3_070809weekly - components070809SM3weekly$seasonal
 autoplot(tsSM3_070809Adjusted)
+
 ### Test Seasonal Adjustment by running Decompose again. Note the very, very small scale for Seasonal
 plot(decompose(tsSM3_070809Adjusted))
 
@@ -559,17 +528,13 @@ plot(tsSM3_HW070809, ylim = c(-2, 30))
 ### HoltWinters forecast & plot
 tsSM3_HW070809for <- forecast(tsSM3_HW070809, h=52)
 plot(tsSM3_HW070809for, ylim = c(-2, 30), ylab= "Watt-Hours", xlab="Time - Sub-meter 3")
+
 ### Forecast HoltWinters with diminished confidence levels
 tsSM3_HW070809forC <- forecast(tsSM3_HW070809, h=52, level=c(10,25))
 ### Plot only the forecasted area
 plot(tsSM3_HW070809forC, ylim = c(-2, 30), ylab= "Watt-Hours", xlab="Time - Sub-meter 3", start(2010))
 
-#### 5. Holt-Winters Forecasting  - Produce Two More Visualizations ####
-### It’s your turn to create two additional sets of HoltWinters forecast plots to compliment sub-meter 3
-### from above. All visualizations along with your analysis will be needed for your report to the homebuilder.
-### 
-### Visualizations and analysis needed for your report:
-### The sub-meter 3 forecast plot and a plot containing only the forecasted area from the walkthrough above
+#### 5. Holt-Winters Forecasting
 ### Plot only the forecasted area
 tsSM3_070809Adjusted <- tsSM3_070809weekly - components070809SM3weekly$seasonal
 autoplot(tsSM3_070809Adjusted)
@@ -580,6 +545,7 @@ tsSM3_HW070809for <- forecast(tsSM3_HW070809, h=52)
 plot(tsSM3_HW070809for, ylim = c(-2, 30), ylab= "Watt-Hours", xlab="Time - Water Heater & AC")
 tsSM3_HW070809forC <- forecast(tsSM3_HW070809, h=52, level=c(10,25))
 plot(tsSM3_HW070809forC, ylim = c(-2, 30), ylab= "Watt-Hours", xlab="Time - Water Heater & AC", start(2010))
+
 ### Sub-meter 1 forecast plot and a plot containing only the forecasted area. Your choice of frequency and time period.
 tsSM1_070809Adjusted <- tsSM1_070809weekly - components070809SM1weekly$seasonal
 autoplot(tsSM1_070809Adjusted)
@@ -590,6 +556,7 @@ tsSM1_HW070809for <- forecast(tsSM1_HW070809, h=52)
 plot(tsSM1_HW070809for, ylim = c(-2, 30), ylab= "Watt-Hours", xlab="Time - Kitchen")
 tsSM1_HW070809forC <- forecast(tsSM1_HW070809, h=52, level=c(10,25))
 plot(tsSM1_HW070809forC, ylim = c(-2, 30), ylab= "Watt-Hours", xlab="Time - Kitchen", start(2010))
+
 ### Sub-meter 2 forecast plot and a plot containing only the forecasted area. Your choice of frequency and time period.
 tsSM2_070809Adjusted <- tsSM2_070809weekly - components070809SM2weekly$seasonal
 autoplot(tsSM2_070809Adjusted)
@@ -600,4 +567,3 @@ tsSM2_HW070809for <- forecast(tsSM2_HW070809, h=52)
 plot(tsSM2_HW070809for, ylim = c(-2, 30), ylab= "Watt-Hours", xlab="Time - Laundry Room")
 tsSM2_HW070809forC <- forecast(tsSM2_HW070809, h=52, level=c(10,25))
 plot(tsSM2_HW070809forC, ylim = c(-2, 30), ylab= "Watt-Hours", xlab="Time - Laundry Room", start(2010))
-
