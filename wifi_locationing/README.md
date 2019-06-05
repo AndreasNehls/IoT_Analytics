@@ -7,7 +7,7 @@
 <h2 align=center>Deep Analytics, Visualitzation and Modelling</h2>
 </p><br></p>
 
-### Task 3: Evaluate Techniques for Wifi Locationing
+### Evaluate Techniques for Wifi Locationing
 
 Indoor locationing: Determining a person’s physical position in a multi-building indoor space using wifi fingerprinting by using this Data Set: [UJIIndoorLoc Data Set](http://archive.ics.uci.edu/ml/datasets/UJIIndoorLoc)
 </p><br></p>

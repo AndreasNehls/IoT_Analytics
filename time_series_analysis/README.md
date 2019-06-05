@@ -7,7 +7,7 @@
 <h2 align=center>Deep Analytics, Visualitzation and Modelling</h2>
 </p><br></p>
 
-### Task 2: Visualize and Analyze Energy Data
+### Visualize and Analyze Energy Data
 
 Smart energy usage: Modeling patterns of energy usage by time of day and day of the year in a typical residence whose electrical system is monitored by multiple sub-meters by using this Data Set: [Individual household electric power consumption Data Set](http://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption)
 </p><br></p>
