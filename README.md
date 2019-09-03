@@ -3,7 +3,7 @@
 </p>
 
 
-<h1 align=center>IoT - Analytics</h1>
+<h1 align=center>SmartHome-Analytic</h1>
 <h2 align=center>Deep Analytics, Visualitzation and Modelling</h2>
 </p><br></p>
 
